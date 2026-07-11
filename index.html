@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Youssef Ounissi | Creative Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio de Youssef Ounissi, Designer & Content Executive spécialisé en design graphique, vidéo, contenus IA et stratégie créative."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="is-loading">
+
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-brand">Youssef<span>.</span></div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Background Effects -->
+  <div class="background-glow" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Designer Bubbles -->
+  <div class="bubble-field" id="bubbleField" aria-hidden="true">
+    <span class="bubble" style="--s: 14; --x: 12%; --d: 0s; --t: 26s;"></span>
+    <span class="bubble" style="--s: 22; --x: 28%; --d: 4s; --t: 32s;"></span>
+    <span class="bubble accent" style="--s: 18; --x: 55%; --d: 8s; --t: 28s;"></span>
+    <span class="bubble" style="--s: 12; --x: 72%; --d: 2s; --t: 24s;"></span>
+    <span class="bubble warm" style="--s: 20; --x: 88%; --d: 6s; --t: 30s;"></span>
+    <span class="bubble" style="--s: 10; --x: 40%; --d: 10s; --t: 22s;"></span>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="siteHeader">
+    <a href="#home" class="logo">Youssef<span>.</span></a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero" id="home">
+
+    <!-- Floating Preview Cards -->
+    <div class="floating-card card-1" data-depth="0.04">
+      <div class="floating-card-inner">
+        <img src="assets/images/project-1.jpg" alt="Landing page preview" />
+        <span>Landing Pages</span>
+      </div>
+    </div>
+
+    <div class="floating-card card-2" data-depth="0.06">
+      <div class="floating-card-inner">
+        <img src="assets/images/project-2.jpg" alt="Thumbnail preview" />
+        <span>Thumbnails</span>
+      </div>
+    </div>
+
+    <div class="floating-card card-3" data-depth="0.05">
+      <div class="floating-card-inner">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/video-edit-1.mp4" type="video/mp4" />
+        </video>
+        <span>Video Edits</span>
+      </div>
+    </div>
+
+    <div class="floating-card card-4" data-depth="0.07">
+      <div class="floating-card-inner">
+        <img src="assets/images/project-4.jpg" alt="AI content preview" />
+        <span>AI Content</span>
+      </div>
+    </div>
+
+    <!-- Center Content -->
+    <section class="hero-content">
+
+      <!-- Profile Orbit Animation -->
+      <div class="profile-orbit">
+        <div class="orbit-ring">
+          <div class="orbit-item" style="--i: 0"><span>PS</span></div>
+          <div class="orbit-item" style="--i: 1"><span>PR</span></div>
+          <div class="orbit-item" style="--i: 2"><span>AI</span></div>
+          <div class="orbit-item" style="--i: 3"><span>CP</span></div>
+          <div class="orbit-item" style="--i: 4"><span>RW</span></div>
+          <div class="orbit-item" style="--i: 5"><span>MJ</span></div>
+          <div class="orbit-item" style="--i: 6"><span>FL</span></div>
+          <div class="orbit-item" style="--i: 7"><span>EL</span></div>
+        </div>
+
+        <div class="profile-photo">
+          <div class="profile-pulse" aria-hidden="true"></div>
+          <img src="assets/images/profile.jpg" alt="Youssef Ounissi" />
+        </div>
+      </div>
+
+      <p class="small-label reveal-item" style="--d: 0.1s">Multimedia Designer</p>
+
+      <h1 class="reveal-item split-title" style="--d: 0.2s">
+        <span class="name-line" data-split>Youssef</span>
+        <span class="name-line accent" data-split>Ounissi</span>
+      </h1>
+
+      <h2 class="reveal-item" style="--d: 0.35s">Designer & Content Executive</h2>
+
+      <p class="hero-description reveal-item" style="--d: 0.45s">
+        Premium visual design, video production and AI-assisted content
+        for brands, creators and digital businesses.
+      </p>
+
+      <div class="hero-actions reveal-item" style="--d: 0.55s">
+        <button class="main-btn primary magnetic" data-panel="imagesPanel">
+          <span>View Work</span>
+        </button>
+
+        <a href="assets/cv/Youssef-Ounissi-CV.pdf" class="main-btn magnetic" download>
+          <span>Download CV</span>
+        </a>
+
+        <a href="#contact" class="main-btn magnetic">
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <div class="stats reveal-item" style="--d: 0.7s">
+        <div>
+          <strong data-count="6" data-suffix="+">0</strong>
+          <span>Years Design</span>
+        </div>
+
+        <div>
+          <strong data-count="6" data-suffix="+">0</strong>
+          <span>Years Video</span>
+        </div>
+
+        <div>
+          <strong data-count="32" data-suffix="K+">0</strong>
+          <span>Followers</span>
+        </div>
+
+        <div>
+          <strong data-count="2" data-suffix="M+">0</strong>
+          <span>Likes</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span></span>
+      Scroll
+    </div>
+  </main>
+
+  <!-- Services strip -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Graphic Design</span>
+      <span>Video Editing</span>
+      <span>AI Content</span>
+      <span>Brand Visuals</span>
+      <span>Landing Pages</span>
+      <span>Short-Form Video</span>
+      <span>Color Grading</span>
+      <span>Creative Direction</span>
+      <span>Graphic Design</span>
+      <span>Video Editing</span>
+      <span>AI Content</span>
+      <span>Brand Visuals</span>
+      <span>Landing Pages</span>
+      <span>Short-Form Video</span>
+      <span>Color Grading</span>
+      <span>Creative Direction</span>
+    </div>
+  </div>
+
+  <!-- Work Quick Section -->
+  <section class="quick-work" id="work">
+    <div class="section-heading reveal">
+      <p>Selected Work</p>
+      <h2>Explore the creative archive</h2>
+    </div>
+
+    <div class="work-choice-grid">
+      <button class="choice-card reveal tilt-card" data-panel="imagesPanel" style="--d: 0.05s">
+        <span class="choice-glow" aria-hidden="true"></span>
+        <span class="choice-index">01</span>
+        <div class="choice-visual" aria-hidden="true"></div>
+        <h3>Design Gallery</h3>
+        <p>Landing pages, thumbnails, posters, artworks and AI visuals.</p>
+        <em class="choice-arrow">View gallery →</em>
+      </button>
+
+      <button class="choice-card reveal tilt-card" data-panel="videosPanel" style="--d: 0.15s">
+        <span class="choice-glow" aria-hidden="true"></span>
+        <span class="choice-index">02</span>
+        <div class="choice-visual v2" aria-hidden="true"></div>
+        <h3>Video Showreel</h3>
+        <p>Showreels, short-form edits, music promos and social content.</p>
+        <em class="choice-arrow">Watch videos →</em>
+      </button>
+
+      <button class="choice-card reveal tilt-card" data-panel="aboutPanel" style="--d: 0.25s">
+        <span class="choice-glow" aria-hidden="true"></span>
+        <span class="choice-index">03</span>
+        <div class="choice-visual v3" aria-hidden="true"></div>
+        <h3>Professional Profile</h3>
+        <p>Skills, tools, experience, AI workflow and background.</p>
+        <em class="choice-arrow">Read profile →</em>
+      </button>
+    </div>
+  </section>
+
+  <!-- About Short Section -->
+  <section class="about-preview" id="about">
+    <div class="about-left reveal">
+      <p class="small-label">About</p>
+      <h2>A multidisciplinary creative focused on visual impact.</h2>
+    </div>
+
+    <div class="about-right reveal" style="--d: 0.15s">
+      <p>
+        With 6 years in graphic design and 6 years in video production,
+        Youssef helps brands, creators and artists build premium content
+        that looks professional, captures attention and performs online.
+      </p>
+
+      <button class="text-btn" data-panel="aboutPanel">
+        Read full profile →
+      </button>
+      <button class="text-btn" data-panel="cvPanel" style="margin-left: 18px;">
+        View CV →
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-inner reveal">
+      <p class="small-label">Contact</p>
+
+      <h2>Let’s create something precise and memorable.</h2>
+
+      <div class="contact-links">
+        <a href="mailto:youssefounissi48@gmail.com" class="magnetic">
+          <span>youssefounissi48@gmail.com</span>
+        </a>
+
+        <a href="tel:+212609380837" class="magnetic">
+          <span>+212 609-380837</span>
+        </a>
+
+        <a href="https://wa.me/212609380837" target="_blank" rel="noopener" class="magnetic">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Images Panel -->
+  <div class="panel" id="imagesPanel">
+    <div class="panel-content">
+      <button class="close-panel" aria-label="Close panel">×</button>
+
+      <div class="panel-header">
+        <p>Image Gallery</p>
+        <h2>Design, thumbnails, posters and AI visuals.</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/project-1.jpg" alt="Cosmetic landing page" />
+          </div>
+
+          <div>
+            <span>Landing Page</span>
+            <h3>Cosmetic Brand Landing Page</h3>
+            <p>Long-form design focused on trust, beauty and conversion.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/project-2.jpg" alt="YouTube thumbnail" />
+          </div>
+
+          <div>
+            <span>Thumbnail</span>
+            <h3>YouTube Thumbnail Design</h3>
+            <p>High-contrast thumbnail created for better click attention.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/project-3.jpg" alt="Music artwork" />
+          </div>
+
+          <div>
+            <span>Artwork</span>
+            <h3>Music Artist Artwork</h3>
+            <p>Creative photo manipulation and visual identity for artists.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/project-4.jpg" alt="AI visual concept" />
+          </div>
+
+          <div>
+            <span>AI Visual</span>
+            <h3>AI Creative Concept</h3>
+            <p>Visual concept enhanced using modern AI creative tools.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos Panel -->
+  <div class="panel" id="videosPanel">
+    <div class="panel-content">
+      <button class="close-panel" aria-label="Close panel">×</button>
+
+      <div class="panel-header">
+        <p>Video Room</p>
+        <h2>Showreel, short-form edits and promotional videos.</h2>
+      </div>
+
+      <div class="video-feature">
+        <video controls poster="assets/images/hero-bg.jpg">
+          <source src="assets/videos/showreel.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div>
+          <span>Featured Showreel</span>
+          <h3>Creative Video Showreel</h3>
+          <p>
+            A fast preview of visual style, editing rhythm, sound design,
+            hooks and creative direction.
+          </p>
+        </div>
+      </div>
+
+      <div class="video-grid">
+        <article>
+          <video controls>
+            <source src="assets/videos/video-edit-1.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+
+          <h3>Short-Form Edit</h3>
+        </article>
+
+        <article>
+          <video controls>
+            <source src="assets/videos/video-edit-2.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+
+          <h3>Promotional Video</h3>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Panel -->
+  <div class="panel" id="aboutPanel">
+    <div class="panel-content">
+      <button class="close-panel" aria-label="Close panel">×</button>
+
+      <div class="panel-header">
+        <p>Creative Profile</p>
+        <h2>Designer, video editor and AI-powered content creator.</h2>
+      </div>
+
+      <div class="profile-grid">
+        <div class="profile-block">
+          <h3>Summary</h3>
+
+          <p>
+            Youssef Ounissi is a Multimedia Designer and Content Executive
+            based in Agadir, Morocco. He specializes in graphic design,
+            video production, marketing visuals and AI-assisted creative workflows.
+          </p>
+
+          <p>
+            He has worked with cosmetic brands, music artists, independent creators
+            and online businesses, creating content designed to look premium and
+            perform strongly on digital platforms.
+          </p>
+        </div>
+
+        <div class="profile-block">
+          <h3>Core Skills</h3>
+
+          <ul>
+            <li>Landing Pages</li>
+            <li>YouTube Thumbnails</li>
+            <li>Social Media Ads</li>
+            <li>Photo Manipulation</li>
+            <li>Advanced Retouching</li>
+            <li>Color Correction</li>
+            <li>Video Editing</li>
+            <li>Cinematic Color Grading</li>
+            <li>VFX & Sound Design</li>
+            <li>Viral Scriptwriting</li>
+            <li>AI Creative Workflows</li>
+          </ul>
+        </div>
+
+        <div class="profile-block">
+          <h3>Tools</h3>
+
+          <div class="tools-list">
+            <span>Photoshop</span>
+            <span>Premiere Pro</span>
+            <span>CapCut</span>
+            <span>FL Studio</span>
+            <span>Mixcraft</span>
+            <span>Runway.ai</span>
+            <span>Krea.ai</span>
+            <span>Leonardo.ai</span>
+            <span>Midjourney</span>
+            <span>ElevenLabs</span>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <h3>Results</h3>
+
+          <div class="result-list">
+            <p><strong>32K+</strong> TikTok followers</p>
+            <p><strong>2M+</strong> total likes</p>
+            <p><strong>6+</strong> years in graphic design</p>
+            <p><strong>6+</strong> years in video production</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CV Panel -->
+  <div class="panel" id="cvPanel">
+    <div class="panel-content cv-panel-content">
+      <button class="close-panel" aria-label="Close panel">×</button>
+
+      <div class="panel-header cv-panel-header">
+        <div>
+          <p>Curriculum Vitae</p>
+          <h2>Youssef Ounissi — Designer & Content Executive</h2>
+        </div>
+
+        <div class="cv-actions">
+          <a class="main-btn primary" href="assets/cv/Youssef-Ounissi-CV.pdf" download>
+            <span>Download PDF</span>
+          </a>
+          <a class="main-btn" href="cv.html" target="_blank" rel="noopener">
+            <span>Open Full CV</span>
+          </a>
+        </div>
+      </div>
+
+      <article class="cv-sheet">
+        <header class="cv-sheet-hero">
+          <div>
+            <h3>Youssef Ounissi</h3>
+            <p class="cv-role">Designer & Content Executive</p>
+            <p>
+              Multimedia designer specialized in graphic design, video production,
+              marketing visuals and AI-assisted creative workflows.
+            </p>
+          </div>
+
+          <ul class="cv-meta">
+            <li><a href="mailto:youssefounissi48@gmail.com">youssefounissi48@gmail.com</a></li>
+            <li><a href="tel:+212609380837">+212 609-380837</a></li>
+            <li>Agadir, Morocco · Remote available</li>
+          </ul>
+        </header>
+
+        <div class="cv-sheet-grid">
+          <section>
+            <h4>Profile</h4>
+            <p>
+              With 6 years in graphic design and 6 years in video production,
+              Youssef helps brands, creators and artists build premium content
+              that looks professional, captures attention and performs online.
+            </p>
+
+            <h4>Experience Focus</h4>
+            <div class="cv-exp">
+              <div>
+                <strong>Graphic Design</strong>
+                <p>Landing pages, thumbnails, e-commerce visuals, social ads, posters and retouching.</p>
+              </div>
+              <div>
+                <strong>Video Production</strong>
+                <p>Short-form edits, promos, color grading, VFX, sound design and viral scripts.</p>
+              </div>
+              <div>
+                <strong>AI Creative Workflows</strong>
+                <p>Visual and audio production with Runway, Leonardo, Krea, Midjourney and ElevenLabs.</p>
+              </div>
+            </div>
+          </section>
+
+          <aside>
+            <h4>Core Skills</h4>
+            <div class="tools-list">
+              <span>Landing Pages</span>
+              <span>Thumbnails</span>
+              <span>Social Ads</span>
+              <span>Photo Manipulation</span>
+              <span>Video Editing</span>
+              <span>Color Grading</span>
+              <span>VFX & Sound</span>
+              <span>AI Workflows</span>
+            </div>
+
+            <h4>Tools</h4>
+            <div class="tools-list">
+              <span>Photoshop</span>
+              <span>Premiere Pro</span>
+              <span>CapCut</span>
+              <span>FL Studio</span>
+              <span>Runway.ai</span>
+              <span>Midjourney</span>
+              <span>ElevenLabs</span>
+            </div>
+
+            <h4>Results</h4>
+            <div class="result-list">
+              <p><strong>32K+</strong> TikTok followers</p>
+              <p><strong>2M+</strong> total likes</p>
+              <p><strong>6+</strong> years design</p>
+              <p><strong>6+</strong> years video</p>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Image Preview Modal -->
+  <div class="image-modal" id="imageModal">
+    <button class="close-image" aria-label="Close image">×</button>
+    <img src="" alt="Preview image" id="modalImage" />
+  </div>
+
+  <!-- FAQ Bot -->
+  <div class="faq-bot">
+    <button class="faq-bot-toggle" id="faqBotToggle" aria-label="Open assistant">
+      <span class="faq-pulse" aria-hidden="true"></span>
+      AI
+    </button>
+
+    <div class="faq-bot-box" id="faqBotBox">
+      <div class="faq-bot-header">
+        <div>
+          <strong>Youssef Assistant</strong>
+          <span>Ask about the portfolio</span>
+        </div>
+
+        <button id="faqBotClose" aria-label="Close assistant">×</button>
+      </div>
+
+      <div class="faq-bot-messages" id="faqBotMessages">
+        <div class="faq-message bot">
+          Hi! Ask me about Youssef’s services, skills, tools, videos, images, CV or contact.
+        </div>
+      </div>
+
+      <form class="faq-bot-form" id="faqBotForm">
+        <input
+          type="text"
+          id="faqBotInput"
+          placeholder="Ask a question..."
+          autocomplete="off"
+        />
+
+        <button type="submit">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Youssef Ounissi. Creative Portfolio.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
