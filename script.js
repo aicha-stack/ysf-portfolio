@@ -502,83 +502,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     PARTICLE CANVAS
-  ========================= */
-  const canvas = document.getElementById("particleCanvas");
-
-  if (canvas && !reduceMotion && !isTouch) {
-    const ctx = canvas.getContext("2d");
-    let width = 0;
-    let height = 0;
-    let particles = [];
-    let rafId = 0;
-
-    function resizeCanvas() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-      createParticles();
-    }
-
-    function createParticles() {
-      const count = Math.min(24, Math.floor((width * height) / 48000));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 3.5 + 1.5,
-        vx: (Math.random() - 0.5) * 0.15,
-        vy: -0.08 - Math.random() * 0.18,
-        a: Math.random() * 0.16 + 0.05,
-        hue: Math.random() > 0.5 ? "teal" : "warm"
-      }));
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < particles.length; i += 1) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.y < -20) {
-          p.y = height + 20;
-          p.x = Math.random() * width;
-        }
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-
-        const grad = ctx.createRadialGradient(p.x - p.r * 0.3, p.y - p.r * 0.3, 0, p.x, p.y, p.r);
-        if (p.hue === "teal") {
-          grad.addColorStop(0, `rgba(255,255,255,${p.a + 0.15})`);
-          grad.addColorStop(0.45, `rgba(45,212,191,${p.a})`);
-          grad.addColorStop(1, "rgba(45,212,191,0)");
-        } else {
-          grad.addColorStop(0, `rgba(255,255,255,${p.a + 0.12})`);
-          grad.addColorStop(0.45, `rgba(244,162,97,${p.a})`);
-          grad.addColorStop(1, "rgba(244,162,97,0)");
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-      }
-
-      rafId = requestAnimationFrame(drawParticles);
-    }
-
-    resizeCanvas();
-    drawParticles();
-
-    window.addEventListener("resize", () => {
-      cancelAnimationFrame(rafId);
-      resizeCanvas();
-      drawParticles();
-    });
-  }
-
-  /* =========================
      PAGE LOADER
   ========================= */
   const pageLoader = document.getElementById("pageLoader");
@@ -672,32 +595,5 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transform = "";
       });
     });
-  }
-
-  /* =========================
-     AMBIENT BUBBLES
-  ========================= */
-  const bubbleField = document.getElementById("bubbleField");
-
-  if (bubbleField && !reduceMotion) {
-    const spawnBubble = (xPercent, size, delay = 0, special = "") => {
-      const bubble = document.createElement("span");
-      bubble.className = `bubble ${special}`.trim();
-      bubble.style.setProperty("--s", String(size));
-      bubble.style.setProperty("--x", `${xPercent}%`);
-      bubble.style.setProperty("--d", `${delay}s`);
-      bubble.style.setProperty("--t", `${22 + Math.random() * 14}s`);
-      bubbleField.appendChild(bubble);
-
-      const lifetime = (22 + Math.random() * 14) * 1000;
-      setTimeout(() => bubble.remove(), lifetime);
-    };
-
-    setInterval(() => {
-      if (document.hidden) return;
-      if (bubbleField.children.length > 10) return;
-      const special = Math.random() > 0.75 ? (Math.random() > 0.5 ? "accent" : "warm") : "";
-      spawnBubble(Math.random() * 100, 8 + Math.random() * 18, 0, special);
-    }, 4500);
   }
 });

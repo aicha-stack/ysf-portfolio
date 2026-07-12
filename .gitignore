@@ -1,0 +1,7 @@
+# Large media — keep locally, host separately or use Git LFS
+assets/videos/*
+assets/images/*
+
+# Keep folder structure on clone
+!assets/videos/.gitkeep
+!assets/images/.gitkeep
