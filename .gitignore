@@ -1,7 +1,6 @@
-# Large media — keep locally, host separately or use Git LFS
-assets/videos/*
-assets/images/*
+# Originals and tools (local only)
+assets/videos/_originals/
+tools/
 
-# Keep folder structure on clone
-!assets/videos/.gitkeep
-!assets/images/.gitkeep
+# Keep media tracked for GitHub Pages deploy
+# (videos are now compressed under GitHub limits)
